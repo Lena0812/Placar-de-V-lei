@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Placar de Vôlei</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h1>Placar de Vôlei</h1>
+
+  <div class="scoreboard">
+    <div class="team">
+      <input type="text" id="teamNameA" class="team-name" value="Time A" />
+      <div id="scoreA" class="score">0</div>
+      <div class="buttons">
+        <button class="add" onclick="addPoint('A')"> Ponto</button>
+      </div>
+    </div>
+    <div class="team">
+      <input type="text" id="teamNameB" class="team-name" value="Time B" />
+      <div id="scoreB" class="score">0</div>
+      <div class="buttons">
+        <button class="add" onclick="addPoint('B')">Ponto</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="control-buttons">
+    <button class="undo" onclick="undo()">↩️ Voltar ponto</button>
+    <button class="reset" onclick="resetScores()">🔄 Reiniciar Placar</button>
+  </div>
+
+  <script>
+    let scoreA = 0;
+    let scoreB = 0;
+    let history = [];
+
+    function updateDisplay() {
+      document.getElementById('scoreA').textContent = scoreA;
+      document.getElementById('scoreB').textContent = scoreB;
+    }
+
+    function addPoint(team) {
+      if (team === 'A') {
+        scoreA++;
+        history.push('A');
+      } else if (team === 'B') {
+        scoreB++;
+        history.push('B');
+      }
+      updateDisplay();
+    }
+
+    function undo() {
+      const last = history.pop();
+      if (last === 'A' && scoreA > 0) {
+        scoreA--;
+      } else if (last === 'B' && scoreB > 0) {
+        scoreB--;
+      }
+      updateDisplay();
+    }
+
+    function resetScores() {
+      scoreA = 0;
+      scoreB = 0;
+      history = [];
+      updateDisplay();
+    }
+  </script>
+
+</body>
+</html>

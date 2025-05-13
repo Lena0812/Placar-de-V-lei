@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  text-align: center;
+  padding: 30px;
+
+    background-image: url('volei2.jpg');
+    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+    background-position: center; /* Alinha a imagem ao centro */
+    background-attachment: fixed; /* Faz com que a imagem não se mova quando a página for rolada */
+}
+
+h1 {
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.team {
+  background: rgb(255, 255, 255); /* Cor de fundo branca com 70% de opacidade */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 200px;
+}
+
+.team h2 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.score {
+  font-size: 48px;
+  color: #000;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.control-buttons {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.add {
+  background-color: #4caf50;
+  color: white;
+}
+
+.undo {
+  background-color: #f44336;
+  color: white;
+}
+
+.reset {
+  background-color: #2196f3;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.team-name {
+  font-size: 20px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  background-color: transparent;
+  color: #333;
+  font-weight: bold;
+}
+
+.team-name:focus {
+  outline: none;
+  border-color: #4caf50;
+}
